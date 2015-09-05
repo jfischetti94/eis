@@ -4,7 +4,11 @@ class Chopper
   end
 
   def chop(anObject,array)
-    return -1
+    if (array.include? anObject)
+      return 0
+    else
+      return -1
+    end
   end
   
 end
