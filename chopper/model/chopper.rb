@@ -4,11 +4,12 @@ class Chopper
   end
 
   def chop(anObject,array)
-    if (array.include? anObject)
-      return 0
-    else
-      return -1
+    index = -1
+    possibleIndex = array.find_index(anObject)
+    if not (possibleIndex.nil?)
+      index = possibleIndex
     end
+    return index
   end
   
 end
