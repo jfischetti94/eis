@@ -15,14 +15,14 @@ class Chopper
   def sum(anIntegerArray)
     sum = 0
     anIntegerArray.cycle(1) {|anInteger| sum += anInteger}    
-    integers = (sum.to_s.split('')).map{| stringNumber | stringNumber.to_i}
-    return numbersDescription(integers)
+    return numberDescription(sum)
   end
 
-  def numbersDescription(integerCollection)
+  def numberDescription(anInteger)
+    numberStringCollection = anInteger.to_s.split('')
     description = ""
-    if integerCollection.size <= 2
-      integerCollection.cycle(1) { |number| description <<oneDigitNumberDescriprion(number)<<","}
+    if numberStringCollection.size <= 2
+      numberStringCollection.cycle(1) { |stringNumber| description <<numberStringDescription(stringNumber)<<","}
       description = description.chomp(",")
     else
       description << overflowNumberDescription()
@@ -30,18 +30,18 @@ class Chopper
     return description
   end
 
-  def oneDigitNumberDescriprion(anInteger)
-    descriptions = {0 => "vacio",
-                    1 => "uno",
-                    2 => "dos",
-                    3 => "tres",
-                    4 => "cuatro",
-                    5 => "cinco",
-                    6 => "seis",
-                    7 => "siete",
-                    8 => "ocho",
-                    9 => "nueve"}
-    return descriptions.delete(anInteger)
+  def numberStringDescription(aStringNumber)
+    descriptions = {"0" => "vacio",
+                    "1" => "uno",
+                    "2" => "dos",
+                    "3" => "tres",
+                    "4" => "cuatro",
+                    "5" => "cinco",
+                    "6" => "seis",
+                    "7" => "siete",
+                    "8" => "ocho",
+                    "9" => "nueve"}
+    return descriptions.delete(aStringNumber)
   end
 
   def overflowNumberDescription()
@@ -49,7 +49,7 @@ class Chopper
   end
 
   public    :chop, :sum
-  private   :oneDigitNumberDescriprion,
+  private   :numberStringDescription,
             :overflowNumberDescription
 
 end
