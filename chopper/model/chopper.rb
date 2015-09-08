@@ -14,12 +14,19 @@ class Chopper
   
   def sum(anIntegerArray)
     sum = 0
+    description = ''
     anIntegerArray.cycle(1) {|anInteger| sum += anInteger}
-    return self.arraySumDescription(sum)
+    if sum < 10
+      description = oneDigitNumberDescriprion(sum)
+    else
+      description = self.arraySumDescription(sum)
+    end
+    return description
   end
 
   def arraySumDescription(anInteger)
-    return self.oneDigitNumberDescriprion(anInteger)
+    descriptionArray = (anInteger.to_s.split('')).map{| number | self.oneDigitNumberDescriprion(number.to_i)} 
+    return ""<<descriptionArray.at(0)<<","<<descriptionArray.at(1)
   end
 
   def oneDigitNumberDescriprion(anInteger)
