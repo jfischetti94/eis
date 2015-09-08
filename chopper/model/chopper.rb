@@ -25,8 +25,15 @@ class Chopper
   end
 
   def arraySumDescription(anInteger)
-    descriptionArray = (anInteger.to_s.split('')).map{| number | self.oneDigitNumberDescriprion(number.to_i)} 
-    return ""<<descriptionArray.at(0)<<","<<descriptionArray.at(1)
+    description = ""
+    if anInteger < 100
+      descriptionArray = (anInteger.to_s.split('')).map{| number | self.oneDigitNumberDescriprion(number.to_i)} 
+      description <<descriptionArray.at(0)<<","<<descriptionArray.at(1)
+    else
+      description = "demasiado grande"
+    end
+    return description
+    
   end
 
   def oneDigitNumberDescriprion(anInteger)
