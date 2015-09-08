@@ -14,26 +14,20 @@ class Chopper
   
   def sum(anIntegerArray)
     sum = 0
-    description = ''
-    anIntegerArray.cycle(1) {|anInteger| sum += anInteger}
-    if sum < 10
-      description = oneDigitNumberDescriprion(sum)
-    else
-      description = self.arraySumDescription(sum)
-    end
-    return description
+    anIntegerArray.cycle(1) {|anInteger| sum += anInteger}    
+    integers = (sum.to_s.split('')).map{| stringNumber | stringNumber.to_i}
+    return numbersDescription(integers)
   end
 
-  def arraySumDescription(anInteger)
+  def numbersDescription(integerCollection)
     description = ""
-    if anInteger < 100
-      descriptionArray = (anInteger.to_s.split('')).map{| number | self.oneDigitNumberDescriprion(number.to_i)} 
-      description <<descriptionArray.at(0)<<","<<descriptionArray.at(1)
+    if integerCollection.size <= 2
+      integerCollection.cycle(1) { |number| description <<oneDigitNumberDescriprion(number)<<","}
+      description = description.chomp(",")
     else
-      description = "demasiado grande"
+      description << overflowNumberDescription()
     end
     return description
-    
   end
 
   def oneDigitNumberDescriprion(anInteger)
@@ -49,8 +43,13 @@ class Chopper
                     9 => "nueve"}
     return descriptions.delete(anInteger)
   end
-=begin
+
+  def overflowNumberDescription()
+    return "demasiado grande"
+  end
+
   public    :chop, :sum
-  private   :arraySumDescription
-=end
+  private   :oneDigitNumberDescriprion,
+            :overflowNumberDescription
+
 end
