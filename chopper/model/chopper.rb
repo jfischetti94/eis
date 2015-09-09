@@ -51,5 +51,6 @@ class Chopper
   public    :chop, :sum
   private   :numberStringDescription,
             :overflowNumberDescription
+            :numberDescription
 
 end
