@@ -14,8 +14,14 @@ class Chopper
   
   def sum(anIntegerArray)
     sum = 0
-    anIntegerArray.cycle(1) {|anInteger| sum += anInteger}    
-    return numberDescription(sum)
+    sumDescription = ""
+    if (anIntegerArray.empty?)
+      sumDescription = emptyArrayDescription
+    else
+      anIntegerArray.cycle(1) {|anInteger| sum += anInteger}
+      sumDescription = numberDescription(sum)
+    end
+    return sumDescription
   end
 
   def numberDescription(anInteger)
@@ -31,7 +37,7 @@ class Chopper
   end
 
   def numberStringDescription(aStringNumber)
-    descriptions = {"0" => "vacio",
+    descriptions = {"0" => "cero",
                     "1" => "uno",
                     "2" => "dos",
                     "3" => "tres",
@@ -44,13 +50,17 @@ class Chopper
     return descriptions.delete(aStringNumber)
   end
 
+  def emptyArrayDescription
+    return "vacio"
+  end
+
   def overflowNumberDescription()
     return "demasiado grande"
   end
 
   public    :chop, :sum
   private   :numberStringDescription,
-            :overflowNumberDescription
-            :numberDescription
-
+            :overflowNumberDescription,
+            :numberDescription,
+            :emptyArrayDescription
 end
