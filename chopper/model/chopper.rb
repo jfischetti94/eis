@@ -19,7 +19,10 @@ class Chopper
       sumDescription = emptyArrayDescription
     else
       anIntegerArray.cycle(1) {|anInteger| sum += anInteger}
-      sumDescription = numberDescription(sum)
+      begin sumDescription = numberDescription(sum)
+        rescue ArgumentError => e
+          sumDescription = e.message
+      end
     end
     return sumDescription
   end
@@ -27,13 +30,11 @@ class Chopper
   def numberDescription(anInteger)
     numberStringCollection = anInteger.to_s.split('')
     description = ""
-    if numberStringCollection.size <= 2
-      numberStringCollection.cycle(1) { |stringNumber| description <<numberStringDescription(stringNumber)<<","}
-      description = description.chomp(",")
-    else
-      description << overflowNumberDescription()
+    if numberStringCollection.size > 2
+      raise ArgumentError.new(overflowNumberDescription())
     end
-    return description
+    numberStringCollection.cycle(1) { |stringNumber| description <<numberStringDescription(stringNumber)<<","} 
+    return description.chomp(",")      
   end
 
   def numberStringDescription(aStringNumber)
