@@ -16,4 +16,8 @@ class Monkey
   	return Win.new
   end
 
+  def play_with_scissors()
+    return Lose.new
+  end
+
 end

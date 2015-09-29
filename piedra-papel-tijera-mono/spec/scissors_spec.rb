@@ -28,4 +28,8 @@ describe 'Scissors' do
     expect(scissors.play_with(scissors)).to eq ties
   end
 
+  it 'scissors wins monkey' do
+    expect(scissors.play_with(monkey)).to eq win
+  end
+
 end
