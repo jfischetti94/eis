@@ -24,4 +24,8 @@ describe 'Scissors' do
     expect(scissors.play_with(paper)).to eq win
   end
 
+  it 'scissors ties scissors' do
+    expect(scissors.play_with(scissors)).to eq ties
+  end
+
 end

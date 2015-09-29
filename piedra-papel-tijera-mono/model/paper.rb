@@ -15,5 +15,9 @@ class Paper
   def play_with_paper()
     return Ties.new
   end
+
+  def play_with_scissors()
+    return Lose.new
+  end
   
 end

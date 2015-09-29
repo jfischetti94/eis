@@ -1,7 +1,7 @@
 class Scissors
 
   def play_with(some_move)
-    return Win.new
+    return some_move.play_with_scissors.opposite
   end
 
   def play_with_rock()
@@ -14,6 +14,10 @@ class Scissors
   
   def play_with_paper()
     return Win.new
+  end
+  
+  def play_with_scissors()
+    return Ties.new
   end
   
 end
