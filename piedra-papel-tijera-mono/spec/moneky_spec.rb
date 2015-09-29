@@ -32,4 +32,8 @@ describe 'Monkey' do
     expect(monkey.play_with(monkey)).to eq ties
   end
 
+  it 'monkey ties rock' do
+    expect(monkey.play_with(rock)).to eq ties
+  end
+
 end
