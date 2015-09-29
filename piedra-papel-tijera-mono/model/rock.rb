@@ -12,4 +12,8 @@ class Rock < Move
     return Ties.new
   end
 
+  def play_with_paper()
+    return Lose.new
+  end
+
 end
