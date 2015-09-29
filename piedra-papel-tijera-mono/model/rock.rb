@@ -1,7 +1,7 @@
 class Rock
 
   def play_with(some_move)
-    return Lose.new
+    return (some_move.play_with_rock()).opposite
   end
 
 end

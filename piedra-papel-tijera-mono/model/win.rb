@@ -4,4 +4,8 @@ class Win
     o.class == self.class
   end
 
+  def opposite()
+    return Lose.new
+  end
+
 end

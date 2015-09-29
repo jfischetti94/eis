@@ -1,6 +1,7 @@
 require 'rspec' 
 require_relative '../model/rock'
 require_relative '../model/paper'
+require_relative '../model/scissors'
 require_relative '../model/win'
 require_relative '../model/lose'
 
@@ -15,6 +16,10 @@ describe 'Rock' do
 
   it 'rock loses paper' do
     expect(rock.play_with(paper)).to eq lose
+  end
+
+  it 'rock wins scissors' do
+    expect(rock.play_with(scissors)).to eq win
   end
 
 end
