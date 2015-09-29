@@ -1,7 +1,7 @@
 class Rock
 
   def play_with(some_move)
-    return Win.new
+    return Lose.new
   end
 
 end
