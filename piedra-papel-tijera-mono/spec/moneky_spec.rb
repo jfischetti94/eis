@@ -28,4 +28,8 @@ describe 'Monkey' do
     expect(monkey.play_with(scissors)).to eq lose
   end
 
+  it 'monkey ties monkey' do
+    expect(monkey.play_with(monkey)).to eq ties
+  end
+
 end

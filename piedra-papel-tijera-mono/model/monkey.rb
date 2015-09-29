@@ -8,4 +8,8 @@ class Monkey
     return Ties.new
   end
 
+  def play_with_monkey()
+    return Ties.new
+  end
+
 end
