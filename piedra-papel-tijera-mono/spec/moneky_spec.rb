@@ -24,4 +24,8 @@ describe 'Monkey' do
     expect(monkey.play_with(paper)).to eq win
   end
 
+  it 'monkey loses scissors' do
+    expect(monkey.play_with(scissors)).to eq lose
+  end
+
 end

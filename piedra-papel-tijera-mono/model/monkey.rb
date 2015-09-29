@@ -1,7 +1,7 @@
 class Monkey
 
   def play_with(some_move)
-    return Win.new
+    return some_move.play_with_monkey.opposite
   end
 
   def play_with_rock()
