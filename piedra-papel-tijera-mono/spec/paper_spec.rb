@@ -32,7 +32,7 @@ describe 'Paper' do
     expect(paper.play_with(monkey)).to eq lose
   end
 
-  it 'monkey ties rock' do
+  it 'paper wins rock' do
     expect(paper.play_with(rock)).to eq win
   end
 
