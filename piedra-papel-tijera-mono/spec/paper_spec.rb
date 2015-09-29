@@ -28,4 +28,8 @@ describe 'Paper' do
     expect(paper.play_with(scissors)).to eq lose
   end
 
+  it 'paper loses monkey' do
+    expect(paper.play_with(monkey)).to eq lose
+  end
+
 end

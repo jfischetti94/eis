@@ -4,10 +4,6 @@ class Paper
     return some_move.play_with_paper.opposite
   end
 
-  def play_with_paper()
-  	return Ties.new
-  end
-
   def play_with_rock()
     return Win.new
   end
@@ -16,4 +12,8 @@ class Paper
     return Lose.new
   end
 
+  def play_with_paper()
+    return Ties.new
+  end
+  
 end
