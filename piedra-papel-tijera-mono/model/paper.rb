@@ -1,7 +1,11 @@
 class Paper
 
   def play_with(some_move)
-    return Ties.new
+    return some_move.play_with_paper.opposite
+  end
+
+  def play_with_paper()
+  	return Ties.new
   end
 
   def play_with_rock()

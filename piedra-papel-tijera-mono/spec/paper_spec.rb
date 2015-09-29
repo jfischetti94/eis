@@ -24,4 +24,8 @@ describe 'Paper' do
     expect(paper.play_with(paper)).to eq ties
   end
 
+  it 'paper loses scissors' do
+    expect(paper.play_with(scissors)).to eq lose
+  end
+
 end
