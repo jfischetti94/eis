@@ -32,4 +32,8 @@ describe 'Scissors' do
     expect(scissors.play_with(monkey)).to eq win
   end
 
+  it 'scissors loses rock' do
+    expect(scissors.play_with(rock)).to eq lose
+  end
+
 end

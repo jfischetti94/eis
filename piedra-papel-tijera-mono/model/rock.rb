@@ -16,4 +16,8 @@ class Rock < Move
     return Lose.new
   end
 
+  def play_with_scissors()
+    return Win.new
+  end
+
 end
