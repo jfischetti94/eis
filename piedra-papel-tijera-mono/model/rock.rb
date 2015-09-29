@@ -1,4 +1,4 @@
-class Rock
+class Rock < Move
 
   def play_with(some_move)
     return (some_move.play_with_rock()).opposite
@@ -7,5 +7,5 @@ class Rock
   def play_with_rock()
     return Ties.new
   end
-  
+
 end
