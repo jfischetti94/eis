@@ -29,11 +29,14 @@ describe 'Round' do
     expect(round.player_two_result).to eq lose
   end
 
-=begin
-  it 'player two wins round' do
 
+  it 'player two wins round' do
+    round = Round.new(monkey,scissors)
+    expect(round.player_one_result).to eq lose
+    expect(round.player_two_result).to eq win
   end
 
+=begin
   it 'players tie' do
 
   end
