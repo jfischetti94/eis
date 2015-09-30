@@ -36,9 +36,11 @@ describe 'Round' do
     expect(round.player_two_result).to eq win
   end
 
-=begin
-  it 'players tie' do
 
+  it 'players tie' do
+    round = Round.new(paper,paper)
+    expect(round.player_one_result).to eq ties
+    expect(round.player_two_result).to eq ties
   end
-=end
+
 end
