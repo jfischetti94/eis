@@ -29,7 +29,7 @@ describe 'Game' do
 
   it 'player one wins game' do
     player_one.want_play([rock,rock,rock])
-    player_two.want_play([scissors,scissors,scissors])
+    player_two.want_play([rock,rock,scissors])
     game = Game.new(player_one,player_two)
     game.play
     expect(game.win.include? :player_one)
@@ -38,7 +38,7 @@ describe 'Game' do
   end
 
   it 'player two wins game' do
-    player_one.want_play([scissors,scissors,scissors])
+    player_one.want_play([scissors,rock,scissors])
     player_two.want_play([rock,rock,rock])
     game = Game.new(player_one,player_two)
     game.play
@@ -48,8 +48,8 @@ describe 'Game' do
   end
 
   it 'players tie' do
-    player_one.want_play([rock,rock,rock])
-    player_two.want_play([rock,rock,rock])
+    player_one.want_play([scissors,monkey,rock])
+    player_two.want_play([rock,rock,scissors])
     game = Game.new(player_one,player_two)
     game.play
     expect(game.win).to eq []

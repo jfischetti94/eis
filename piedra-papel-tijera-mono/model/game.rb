@@ -44,10 +44,10 @@ class Game
 
   def ties()
     ret = []
-    if (@player_one_results.count(Win.new)) == (@player_two_results.count(Win.new))
+    if (self.win().empty? and self.lose.empty?)
       ret = [@player_one,@player_two]
     end
     return ret    
   end
-  
+
 end
