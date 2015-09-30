@@ -43,7 +43,7 @@ class Game
   def ties()
     ret = []
     if (@player_one_results.count(Win.new)) == (@player_two_results.count(Win.new))
-      ret [@player_one,@player_two]
+      ret = [@player_one,@player_two]
     end
     return ret    
   end
