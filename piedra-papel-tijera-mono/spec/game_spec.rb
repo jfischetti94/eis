@@ -37,4 +37,14 @@ describe 'Game' do
     expect(game.ties).to eq []
   end
 
+  it 'player two wins game' do
+    player_one.want_play([scissors,scissors,scissors])
+    player_two.want_play([rock,rock,rock])
+    game = Game.new(player_one,player_two)
+    game.play
+    expect(game.win[0]).to eq player_two
+    expect(game.lose[0]).to eq player_one
+    expect(game.ties).to eq []
+  end
+
 end
