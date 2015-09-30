@@ -30,4 +30,11 @@ describe 'Player' do
     player.want_play(movements)
     expect(player.movements).to eq movements
   end
+
+  it 'two player with same name and movements are equals' do
+    some_player = Player.new('Foo')
+    another_player = Player.new('Foo')
+    expect(some_player).to eq another_player
+  end
+  
 end
