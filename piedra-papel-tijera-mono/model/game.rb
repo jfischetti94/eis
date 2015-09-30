@@ -11,11 +11,13 @@ class Game
   end
 
   def play()
-    @player_one_results = []
     (0..2).each do |i| 
-      @player_one_results << player_one.movements[i].play_with(player_two.movements[i])
+      player_one_move = @player_one.movements[i]
+      player_two_move = @player_two.movements[i]
+      round = Round.new(player_one_move,player_two_move)
+      @player_one_results << round.player_one_result
+      @player_two_results << round.player_two_result
     end
-    @player_one_results.cycle(1) {|result| @player_two_results << result.opposite}
   end
 
   def win()
@@ -31,10 +33,10 @@ class Game
 
   def lose()
     ret = []
-    if (@player_one_results.count(Win.new) > @player_two_results.count(Win.new))
+    if (@player_one_results.count(Lose.new) > @player_two_results.count(Lose.new))
       ret = [@player_two]
     end
-    if (@player_one_results.count(Win.new) < @player_two_results.count(Win.new))
+    if (@player_one_results.count(Lose.new) < @player_two_results.count(Lose.new))
       ret = [@player_one]
     end
     return ret
@@ -47,5 +49,5 @@ class Game
     end
     return ret    
   end
-
+  
 end
