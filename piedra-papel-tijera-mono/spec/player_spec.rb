@@ -24,4 +24,10 @@ describe 'Player' do
     expect(player.name).to eq 'Foo'
   end
 
+  it 'some player can define your movements' do
+    player = Player.new('Foo')
+    movements = [rock,paper,scissors,monkey]
+    player.want_play(movements)
+    expect(player.movements).to eq movements
+  end
 end

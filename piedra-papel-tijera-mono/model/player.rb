@@ -1,11 +1,15 @@
 class Player
 
+  attr_accessor :name
+  attr_accessor :movements
+
   def initialize(user_name)
     @name = user_name
+    @movements = []
   end
 
-  def name()
-    return @name
+  def want_play(movements)
+    @movements = movements
   end
 
   def ==(o)
