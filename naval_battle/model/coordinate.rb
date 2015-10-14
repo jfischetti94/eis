@@ -8,6 +8,10 @@ class Coordinate
     @y = y
   end
 
+  def ==(o)
+    o.class == self.class && o.x == x && o.y == y
+  end
+
   def x()
     return @x
   end

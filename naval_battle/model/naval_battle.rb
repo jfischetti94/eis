@@ -1,6 +1,6 @@
 require_relative 'board'
 require_relative 'ship'
-Coordinate = Struct.new(:x, :y)
+require_relative 'coordinate'
 
 class Naval_Battle
 

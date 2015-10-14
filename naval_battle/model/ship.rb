@@ -1,5 +1,3 @@
-Coordinate = Struct.new(:x, :y)
-
 class Ship
 
   def Ship.submarine(origin,orientation)
