@@ -19,7 +19,7 @@ cd base_cucumber
 bundle install
 bundle exec rake
 
-cd..
+cd ..
 cd naval_battle
 bundle install
 bundle exec rake
