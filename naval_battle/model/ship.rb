@@ -23,7 +23,7 @@ class Ship
   end
 
   def positions
-    return [Coordinate.new(1,1)]
+    return orientation.positions_for(self)
   end
 
 end

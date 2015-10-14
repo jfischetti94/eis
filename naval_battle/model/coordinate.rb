@@ -3,6 +3,7 @@ require_relative 'ship'
 
 class Coordinate
 
+  attr_accessor :x, :y
   def initialize(x,y)
     @x = x
     @y = y
@@ -12,12 +13,12 @@ class Coordinate
     o.class == self.class && o.x == x && o.y == y
   end
 
-  def x()
-    return @x
+  def +(some_coordinate)
+    Coordinate.new(some_coordinate.x+x,some_coordinate.y+y)
   end
-  
-  def y()
-    return @y
-  end 
+
+  def to_s()
+    "Coordinate:(#{self.x},#{self.y})"
+  end
 
 end
