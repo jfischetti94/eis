@@ -1,5 +1,9 @@
 class Ship
 
+  ######
+  public
+  ######
+  attr_accessor :long, :origin, :orientation
   def Ship.submarine(origin,orientation)
     self.new(1, origin, orientation)
   end
@@ -18,16 +22,8 @@ class Ship
     @orientation = orientation
   end
 
-  def long()
-    return @long
-  end
-
-  def origin()
-    return @origin
-  end
-
-  def orientation
-    return @orientation
+  def positions
+    return [Coordinate.new(1,1)]
   end
 
 end

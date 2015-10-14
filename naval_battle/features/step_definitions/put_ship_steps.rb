@@ -12,6 +12,7 @@ When(/^i put a ([^"]*) ([^"]*) in cell \[(\d+),(\d+)\]$/) do |orientation, ship_
   @naval_battle.put(ship_name,orientation,horizontal_axis.to_i,vertical_axis.to_i)
 end
 
-Then(/^the submarine is located at position \[(\d+),(\d+)\]$/) do |x, y|
+Then(/^the ([^"]*) is located at position \[(\d+),(\d+)\]$/) do |ship_name, x, y|
   @naval_battle.cell_occupied?(x.to_i, y.to_i)
 end
+
