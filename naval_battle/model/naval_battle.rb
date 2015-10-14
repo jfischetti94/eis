@@ -17,10 +17,10 @@ class Naval_Battle
   end
 
   def put(ship_name,orientation,vertical_axis,horizontal_axis)
-    #ship = Ship.send(ship_name.to_sym)
-    ship = Ship.new()
-    position = Coordinate.new(vertical_axis,horizontal_axis)
-    @board.put_in(ship,position)
+    ship_origin = Coordinate.new(vertical_axis,horizontal_axis)
+    ship_orientation = orientation
+    ship = Ship.send(ship_name.to_sym,ship_origin,orientation)
+    @board.put_in(ship,ship_origin)
   end
 
   def cell_occupied?(x,y)

@@ -12,9 +12,9 @@ Feature: As a user I want to put my ships
     When i put a vertical submarine in cell [1,1]
     Then the submarine is located at position [1,1]
 
-  @wip
+
   Scenario: I put a horizontal submarine successfully
-    When i put a vertical submarine in cell [1,1]
+    When i put a horizontal submarine in cell [1,1]
     Then the submarine is located at position [1,1]
 
   @wip
@@ -31,7 +31,7 @@ Feature: As a user I want to put my ships
 
   @wip
   Scenario: I put a vertical destroyer successfully
-    When i put destroyer in cell [1,1] vertical
+    When i put a vertical destroyer in cell [1,1] vertical
     Then the destroyer is located at position [1,1]
       And the destroyer is located at position [1,2]
       And the destroyer is located at position [1,3]
