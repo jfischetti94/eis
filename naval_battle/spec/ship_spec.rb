@@ -12,7 +12,7 @@ describe 'Ship' do
     expect( ship.long() ).to eq 1
     expect( ship.origin() ).to eq Coordinate.new(1,1)
     expect( ship.orientation() ).to eq horizontal
-    expect( ship.positions() ).to eq [Coordinate.new(1,1)]
+    expect( ship.coordinates() ).to eq [Coordinate.new(1,1)]
   end
 
   it 'a cruiser ship long is 2 and take the correct cells' do
@@ -20,7 +20,7 @@ describe 'Ship' do
     expect( ship.long() ).to eq 2
     expect( ship.origin() ).to eq Coordinate.new(1,1)
     expect( ship.orientation() ).to eq horizontal
-    expect( ship.positions() ).to eq [Coordinate.new(1,1),Coordinate.new(2,1)]
+    expect( ship.coordinates() ).to eq [Coordinate.new(1,1),Coordinate.new(2,1)]
   end
 
   it 'a destroyer ship long is 3 and take the correct cells' do
@@ -28,7 +28,7 @@ describe 'Ship' do
     expect( ship.long() ).to eq 3
     expect( ship.origin() ).to eq Coordinate.new(1,1)
     expect( ship.orientation() ).to eq horizontal
-    expect( ship.positions() ).to eq [Coordinate.new(1,1),Coordinate.new(2,1),Coordinate.new(3,1)]
+    expect( ship.coordinates() ).to eq [Coordinate.new(1,1),Coordinate.new(2,1),Coordinate.new(3,1)]
   end
 
 end

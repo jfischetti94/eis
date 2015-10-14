@@ -22,7 +22,7 @@ class Ship
     @orientation = orientation
   end
 
-  def positions
+  def coordinates
     return orientation.positions_for(self)
   end
 

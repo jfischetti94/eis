@@ -1,6 +1,7 @@
 require_relative 'board'
 require_relative 'ship'
 require_relative 'coordinate'
+require_relative 'horizontal'
 
 class Naval_Battle
 
@@ -18,9 +19,9 @@ class Naval_Battle
 
   def put(ship_name,orientation,vertical_axis,horizontal_axis)
     ship_origin = Coordinate.new(vertical_axis,horizontal_axis)
-    ship_orientation = orientation
-    ship = Ship.send(ship_name.to_sym,ship_origin,orientation)
-    @board.put_in(ship,ship_origin)
+    ship_orientation = Horizontal.new()
+    ship = Ship.send(ship_name.to_sym,ship_origin,ship_orientation)
+    @board.put(ship)
   end
 
   def cell_occupied?(x,y)
