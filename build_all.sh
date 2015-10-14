@@ -13,3 +13,8 @@ cd ..
 cd piedra-papel-tijera-mono
 bundle install
 bundle exec rake
+
+cd ..
+cd base_cucumber
+bundle install
+bundle exec rake
