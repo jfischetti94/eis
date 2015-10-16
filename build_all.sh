@@ -20,6 +20,6 @@ bundle install
 bundle exec rake
 
 cd ..
-cd naval_battle
+cd battleship
 bundle install
 bundle exec rake
