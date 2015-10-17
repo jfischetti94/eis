@@ -5,7 +5,6 @@ require_relative '../model/coord'
 describe 'Ship' do
 
   before(:each) do
-    @coord = double("coord")
     @coord = instance_double("Coord", :x => 1, :y => 1)
     @vertical = "vertical"
   end
@@ -16,6 +15,7 @@ describe 'Ship' do
     expect( ship.long ).to eq 1
     expect( ship.origin ).to eq @coord
     expect( ship.orientation ).to eq @vertical
+    expect( ship.coords ).to eq [@coord]
   end
 
 end

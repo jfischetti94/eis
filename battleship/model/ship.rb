@@ -13,7 +13,7 @@ class Ship
   end
 
   def coords
-    raise "must be implemented"
+    return [origin]
   end
 
 end
