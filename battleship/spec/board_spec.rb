@@ -19,15 +19,13 @@ describe 'Board' do
     expect( board.status_in(@origin_coord) ).to eq "empty"    
   end
 
-=begin
   it 'put ship with long 1 horizontally' do
     orientation = "vertical"
-    ship =  instance_double("Ship", :long => 1, :origin => @origin_coord, :orientation => "vertical")
+    ship =  instance_double("Ship", :long => 1, :coords => [@origin_coord])
 
     expect( board.status_in(@origin_coord) ).to eq "empty"
     board.put_ship(ship)
     expect( board.status_in(@origin_coord) ).to eq "taken"
   end
-=end
 
 end

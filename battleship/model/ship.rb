@@ -12,4 +12,8 @@ class Ship
     @orientation = orientation
   end
 
+  def coords
+    raise "must be implemented"
+  end
+
 end
