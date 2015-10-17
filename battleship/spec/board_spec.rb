@@ -52,6 +52,12 @@ describe 'Board' do
     expect( board.status_in(@coord3_1) ).to eq "taken"
   end
 
+  it 'put ship with long 1 verticaly' do
+    ship =  instance_double("Ship", :long => 1, :coords => [@coord1_1])
 
+    expect( board.status_in(@coord1_1) ).to eq "empty"
+    board.put_ship(ship)
+    expect( board.status_in(@coord1_1) ).to eq "taken"
+  end
 
 end
