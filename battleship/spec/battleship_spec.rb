@@ -12,6 +12,7 @@ describe 'Battleship' do
 
 =begin
   it 'put a vertical submarine successfully' do
+    expect( battleship.status_in(1,1) ).to eq "empty"
     battleship.put_ship("submarine",1,1,"horizontal")
     expect( battleship.status_in(1,1) ).to eq "taken"
   end 

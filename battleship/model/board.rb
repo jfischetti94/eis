@@ -1,16 +1,9 @@
 class Board
 
-  def initialize(x,y)
-    @x = x
-    @y = y
-  end
-
-  def high
-    return 10
-  end
-
-  def width
-    return 10
+  attr_accessor :width, :high
+  def initialize(width,high)
+    @width = width
+    @high = high
   end
 
 end
