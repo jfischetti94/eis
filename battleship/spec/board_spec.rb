@@ -92,7 +92,7 @@ describe 'Board' do
     expect( board.status_in(@coord2_1) ).to eq "taken"
     expect( board.status_in(@coord3_1) ).to eq "empty"
 
-    expect { board.put_ship(other_ship) }.to raise_error("the position [2,1] is taken")
+    expect { board.put_ship(other_ship) }.to raise_error("some coord is taken")
     expect( board.status_in(@coord1_1) ).to eq "empty"
     expect( board.status_in(@coord2_1) ).to eq "taken"
     expect( board.status_in(@coord3_1) ).to eq "empty"

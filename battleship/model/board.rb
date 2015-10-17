@@ -37,7 +37,7 @@ class Board
   def check_cells_status_to_put(coords)
     coords.cycle(1) {|coord| 
       if status_in(coord)=="taken"
-        raise "the position [#{coord.x},#{coord.y}] is taken"
+        raise "some coord is taken"
       end}
   end
 
