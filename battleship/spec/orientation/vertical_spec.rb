@@ -18,9 +18,9 @@ describe 'Vertical' do
   it 'obtains coords for 2 size' do
     expect( vertical.coords_from_for(coord_1_1,2) ).to eq [coord_1_1,coord_1_2]
   end
-=begin 
+
   it 'obtains coords for 3 size' do
     expect( vertical.coords_from_for(coord_1_1,3) ).to eq [coord_1_1, coord_1_2, coord_1_3]
   end
-=end
+
 end
