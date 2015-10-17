@@ -1,7 +1,7 @@
 require 'rspec'
 require_relative '../model/coord'
 
-describe 'Battleship' do
+describe 'Coord' do
 
   let(:coord) {Coord.new(2,5)}
 

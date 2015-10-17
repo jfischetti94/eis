@@ -1,5 +1,7 @@
 require_relative 'board'
 require_relative 'coord'
+require_relative 'vertical'
+require_relative 'ship'
 
 class Battleship
 
