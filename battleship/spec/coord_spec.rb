@@ -22,4 +22,12 @@ describe 'Coord' do
     expect( coord1 ).not_to eq coord2
   end
 
+  it 'coord (1,2) plus coord (4,8) is coord (5,10)' do
+    coord1 = Coord.new(1,2)
+    coord2 = Coord.new(4,8)
+    result_coord = coord1 + coord2
+    expect( result_coord ).to eq Coord.new(5,10)
+  end
+
+
 end
