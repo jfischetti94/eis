@@ -9,13 +9,11 @@ describe 'Battleship' do
     expect( battleship.board_high ).to eq 10
     expect( battleship.board_width ).to eq 10
   end
-=begin
   
-end
   it 'put a vertical submarine successfully' do
     expect( battleship.status_in(1,1) ).to eq "empty"
     battleship.put_ship("submarine",1,1,"horizontal")
     expect( battleship.status_in(1,1) ).to eq "taken"
   end 
-=end
+
 end

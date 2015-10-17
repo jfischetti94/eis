@@ -25,7 +25,7 @@ class Battleship
   end
 
   def status_in(x,y)
-    return "empty"
+    return @board.status_in(Coord.new(x,y))
   end
 
 end
