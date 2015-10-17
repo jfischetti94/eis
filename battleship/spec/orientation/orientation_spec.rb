@@ -7,9 +7,9 @@ describe 'Orientation' do
   it 'make horizontal orientation' do
     expect( Orientation.horizontal ).to eq Horizontal.new
   end
-=begin
+
   it 'make vertial orientation' do
     expect( Orientation.vertical ).to eq Vertical.new
   end
-=end
+
 end
