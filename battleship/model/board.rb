@@ -15,12 +15,16 @@ class Board
   end
 
   def status_in(coord)
-    if (@cells[[coord.x,coord.y]])=="empty"
-      ret = "empty"
-    else
-      ret = "taken"
+    if coord.x > @width || coord.y > @high
+      return "off board"
     end
-    return ret
+
+    if (@cells[[coord.x,coord.y]])=="empty"
+      return "empty"
+    else
+      return "taken"
+    end
+    return "unknown status"
   end
 
   def put_ship(ship)
@@ -38,6 +42,9 @@ class Board
     coords.cycle(1) {|coord| 
       if status_in(coord)=="taken"
         raise "some coord is taken"
+      end
+      if status_in(coord)=="off board"
+        raise "some position is off board"
       end}
   end
 

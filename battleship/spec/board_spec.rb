@@ -98,4 +98,11 @@ describe 'Board' do
     expect( board.status_in(@coord3_1) ).to eq "empty"
   end
 
+  it 'can not put ship in off board cell' do
+    coord11_11 = instance_double("Coord", :x => 11, :y => 11)
+    ship =  instance_double("Ship", :long => 1, :coords => [coord11_11])
+
+    expect { board.put_ship(ship) }.to raise_error("some position is off board")
+  end
+
 end
