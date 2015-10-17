@@ -5,7 +5,7 @@ class Orientation
 	end
 
 	def self.vertical
-		return Vertical.new
+		return Vertical.new()
 	end
 
   def ==(o)

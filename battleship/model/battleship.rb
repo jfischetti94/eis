@@ -2,6 +2,8 @@ require_relative 'board'
 require_relative 'coord'
 require_relative 'ship'
 require_relative 'orientation/orientation'
+require_relative 'orientation/vertical'
+require_relative 'orientation/horizontal'
 
 class Battleship
 
