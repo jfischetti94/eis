@@ -41,4 +41,8 @@ describe 'Battleship' do
     expect( battleship.status_in(3,1) ).to eq "empty"
   end
 
+  it 'can not put ship in off board cell' do
+    expect { battleship.put_ship("cruiser",11,11,"horizontal") }.to raise_error("some position is off board")
+  end
+
 end
