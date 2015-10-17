@@ -29,5 +29,16 @@ describe 'Battleship' do
     expect( battleship.status_in(1,1) ).to eq "taken"
     expect( battleship.status_in(1,2) ).to eq "taken"
   end
-
+=begin
+  it 'can not put ship in taken cell' do
+    battleship.put_ship("submarine",2,1,"horizontal")
+    expect( battleship.status_in(1,1) ).to eq "empty"
+    expect( battleship.status_in(2,1) ).to eq "taken"
+    expect( battleship.status_in(3,1) ).to eq "empty"
+    expect { battleship.put_ship("cruiser",1,1,"horizontal") }.to raise_error("the position is taken")    
+    expect( battleship.status_in(1,1) ).to eq "empty"
+    expect( battleship.status_in(2,1) ).to eq "taken"
+    expect( battleship.status_in(3,1) ).to eq "empty"
+  end
+=end
 end
