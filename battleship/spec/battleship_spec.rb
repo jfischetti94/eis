@@ -22,12 +22,12 @@ describe 'Battleship' do
     expect( battleship.status_in(1,1) ).to eq "taken"
   end
 
-  it 'put a horizontal cruiser successfully' do
+  it 'put a vertical cruiser successfully' do
     expect( battleship.status_in(1,1) ).to eq "empty"
-    expect( battleship.status_in(2,1) ).to eq "empty"
-    battleship.put_ship("cruiser",1,1,"horizontal")
+    expect( battleship.status_in(1,2) ).to eq "empty"
+    battleship.put_ship("cruiser",1,1,"vertical")
     expect( battleship.status_in(1,1) ).to eq "taken"
-    expect( battleship.status_in(2,1) ).to eq "taken"
+    expect( battleship.status_in(1,2) ).to eq "taken"
   end
 
 end

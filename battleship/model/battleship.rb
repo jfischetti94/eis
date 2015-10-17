@@ -1,7 +1,7 @@
 require_relative 'board'
 require_relative 'coord'
-require_relative 'vertical'
 require_relative 'ship'
+require_relative 'orientation/orientation'
 
 class Battleship
 
@@ -19,7 +19,7 @@ class Battleship
 
   def put_ship(ship_name, x, y,orientation_name)
     origin_coord = Coord.new(x,y)
-    ship_orientation = Horizontal.new()
+    ship_orientation = Orientation.send(orientation_name)
     ship = Ship.send(ship_name,origin_coord,ship_orientation)
     @board.put_ship(ship)
   end
