@@ -30,4 +30,7 @@ class Battleship
     return @board.status_in(Coord.new(x,y))
   end
 
+  def shoot(x,y)
+  end
+
 end

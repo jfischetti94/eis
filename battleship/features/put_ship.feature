@@ -3,10 +3,6 @@ Feature: As a user I want to put my ships
   Background:
     Given an empty battleship 10x10
 
-################
-## Scenario 1 ##
-################
-
   Scenario: I put a ship
     When i put a vertical cruiser in cell [1,1]
     Then the cruiser is located at position [1,1]
