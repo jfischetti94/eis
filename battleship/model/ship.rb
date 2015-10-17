@@ -18,10 +18,23 @@ class Ship
     @long = long
     @origin =  origin_coord
     @orientation = orientation
+    @hit_coords = []
   end
 
   def coords
     return @orientation.coords_from_for(@origin,@long)
+  end
+
+  def shoot_in(coord)
+    @hit_coords << coord
+  end
+
+  def status
+    if @hit_coords == coords
+      return "sunken"
+    else
+      return "afloat"
+    end
   end
 
 end

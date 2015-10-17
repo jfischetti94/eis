@@ -54,6 +54,13 @@ describe 'Battleship' do
     battleship.put_ship("cruiser",1,1,"vertical")
     battleship.shoot(1,1)
     expect( battleship.ship_status_in(1,1) ).to eq "afloat"
-  end  
+  end
+=begin
+  it 'shoot a ship and sunken' do
+    battleship.put_ship("submarine",1,1,"vertical")
+    battleship.shoot(1,1)
+    expect( battleship.ship_status_in(1,1) ).to eq "sunken"
+  end 
+=end
 
 end
