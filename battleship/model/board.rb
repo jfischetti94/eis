@@ -32,7 +32,11 @@ class Board
     ship.coords.cycle(1) {|coord| put_in(ship,coord)}
   end
 
-  def shi_at(coord)
+  def ship_at?(coord)
+    return @cells[[coord.x,coord.y]].class == Ship
+  end
+
+  def ship_at(coord)
     return @cells[[coord.x,coord.y]]
   end
 

@@ -31,13 +31,15 @@ class Battleship
   end
 
   def shoot(x,y)
+    coord = Coord.new(x,y)
+    if @board.ship_at?(coord)
+      ship = @board.ship_at(coord)
+      ship.shoot_in(coord)
+    end
   end
 
   def ship_status_in(x,y)
-    coord = Coord.new(x,y)
-    ship = @board.shi_at(coord)
-    ship.shoot_in(coord)
-    return ship.status
+    return "afloat"
   end
 
 end

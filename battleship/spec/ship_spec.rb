@@ -37,4 +37,11 @@ describe 'Ship' do
     expect( ship.status ).to eq "afloat"
   end
 
+  it 'shoot it and sunken' do
+    allow(@vertical).to receive(:coords_from_for) { [@coord_1_1] }
+    ship = Ship.submarine(@coord_1_1,@vertical)
+    ship.shoot_in(@coord_1_1)
+    expect( ship.status ).to eq "sunken"
+  end
+
 end
