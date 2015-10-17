@@ -10,10 +10,16 @@ describe 'Coord' do
     expect( coord.y ).to eq 5
   end
 
-  it 'a coord (1,8) its equals to coord (1,8)' do
+  it 'coord (1,8) its equals to coord (1,8)' do
     coord1 = Coord.new(1,8)
     coord2 = Coord.new(1,8)
     expect( coord1 ).to eq coord2
+  end
+
+  it 'coord (5,2) it is not equal to a coord (4,8)' do
+    coord1 = Coord.new(5,2)
+    coord2 = Coord.new(4,8)
+    expect( coord1 ).not_to eq coord2
   end
 
 end
