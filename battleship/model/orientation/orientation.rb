@@ -1,6 +1,3 @@
-require_relative 'horizontal'
-require_relative 'vertical'
-
 class Orientation
 
 	def self.horizontal
@@ -10,6 +7,10 @@ class Orientation
 	def self.vertical
 		return Vertical.new
 	end
+
+  def ==(o)
+    o.class == self.class
+  end
 
   def coords_from_for(coord,size)
   	raise "Subclass Responsibility"

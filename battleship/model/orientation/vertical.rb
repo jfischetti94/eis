@@ -1,6 +1,6 @@
 require_relative '../coord'
 
-class Vertical
+class Vertical < Orientation
 
   def coords_from_for(coord,size)
     coords = []
