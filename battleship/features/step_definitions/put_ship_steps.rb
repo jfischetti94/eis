@@ -5,13 +5,7 @@ Given(/^an empty battleship (\d+)x(\d+)$/) do |x_size, y_size|
 end
 
 When(/^i put a ([^"]*) ([^"]*) in cell \[(\d+),(\d+)\]$/) do |orientation, ship_name, x, y|
-  begin
     @battleship.put_ship(ship_name.to_sym, x.to_i, y.to_i ,orientation.to_sym)
-  rescue Exception => e
-    @exception = e
-  end
-
-  
 end
 
 Then(/^the ([^"]*) is located at position \[(\d+),(\d+)\]$/) do |ship_name, x, y|
@@ -20,6 +14,14 @@ end
 
 Given(/^the cell \[(\d+),(\d+)\] is occupied$/) do |x, y|
   @battleship.put_ship(:submarine, x.to_i, y.to_i ,:horizontal)
+end
+
+When(/^I try put ([^"]*) ([^"]*) in cell \[(\d+),(\d+)\]$/) do |orientation, ship_name, x, y|
+  begin
+    @battleship.put_ship(ship_name.to_sym, x.to_i, y.to_i ,orientation.to_sym)
+  rescue Exception => e
+    @exception = e
+  end
 end
 
 Then(/^i can not put the ([^"]*) in cell \[(\d+),(\d+)\] because there are collision$/) do |ship_name,x, y|

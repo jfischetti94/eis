@@ -13,10 +13,10 @@ Feature: As a user I want to put my ships
 
   Scenario: I can not locate my ship position [3,3] because there are taken
     Given the cell [3,3] is occupied
-    When i put a vertical cruiser in cell [3,3]
+    When I try put vertical cruiser in cell [3,3]
     Then i can not put the cruiser in cell [3,3] because there are collision
 
   @wip
   Scenario: I can not locate my ship in position [11,1] because falls off the board
-    When I try put a submarine in cell [11,1]
+    When I try put submarine in cell [11,1]
     Then I can not put submarine because falls off the board
