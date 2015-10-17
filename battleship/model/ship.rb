@@ -1,7 +1,15 @@
 class Ship
 
   def self.submarine(origin_coord,orientation)
-    self.new("submarine", 1, origin_coord, orientation)
+    self.name_and_size("submarine", 1, origin_coord, orientation)
+  end
+
+  def self.cruiser(origin_coord,orientation)
+    self.name_and_size("cruiser", 2, origin_coord, orientation)
+  end
+
+  def self.name_and_size(name, long, origin_coord, orientation)
+    self.new(name, long, origin_coord, orientation)
   end
 
   attr_accessor :name, :long, :origin, :orientation
@@ -13,7 +21,7 @@ class Ship
   end
 
   def coords
-    return [origin]
+    return @orientation.coords_from_for(@origin,@long)
   end
 
 end
