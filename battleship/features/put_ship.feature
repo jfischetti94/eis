@@ -11,11 +11,10 @@ Feature: As a user I want to put my ships
     When i put a vertical cruiser in cell [1,1]
     Then the cruiser is located at position [1,1]
 
-  @wip
   Scenario: I can not locate my ship position [3,3] because there are taken
     Given the cell [3,3] is occupied
     When i put a vertical cruiser in cell [3,3]
-    Then i can not put the cruiser because there are collision
+    Then i can not put the cruiser in cell [3,3] because there are collision
 
   @wip
   Scenario: I can not locate my ship in position [11,1] because falls off the board
