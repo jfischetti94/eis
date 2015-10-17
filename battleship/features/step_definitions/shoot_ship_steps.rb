@@ -17,7 +17,7 @@ Given(/^the cell \[(\d+),(\d+)\] is occupied for ([^"]*) ([^"]*)$/) do |x, y, or
 end
 
 Then(/^I hit ship in \[(\d+),(\d+)\] but dont sunken$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect( @battleship.ship_status_in(1,1) ).to eq "afloat"
 end
 
 
