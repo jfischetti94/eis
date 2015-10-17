@@ -29,3 +29,7 @@ Then(/^i can not put the ([^"]*) in cell \[(\d+),(\d+)\] because there are colli
   expect( @exception.message ).to eq "some coord is taken"
 end
 
+Then(/^I can not put submarine because falls off the board$/) do
+  expect( @exception.message ).to eq "some position is off board"
+end
+

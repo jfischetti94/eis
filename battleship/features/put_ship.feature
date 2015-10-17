@@ -16,7 +16,6 @@ Feature: As a user I want to put my ships
     When I try put vertical cruiser in cell [3,3]
     Then i can not put the cruiser in cell [3,3] because there are collision
 
-  @wip
   Scenario: I can not locate my ship in position [11,1] because falls off the board
-    When I try put submarine in cell [11,1]
+    When I try put vertical submarine in cell [11,1]
     Then I can not put submarine because falls off the board
