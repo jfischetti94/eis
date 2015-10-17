@@ -33,4 +33,8 @@ class Battleship
   def shoot(x,y)
   end
 
+  def ship_status_in(x,y)
+    return "afloat"
+  end
+
 end

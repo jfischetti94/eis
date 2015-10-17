@@ -48,6 +48,12 @@ describe 'Battleship' do
   it 'shoot an empty coord' do
     battleship.shoot(1,1)
     expect( battleship.status_in(1,1) ).to eq "empty"
+  end
+
+  it 'shoot a ship and dont sunken' do
+    battleship.put_ship("cruiser",1,1,"vertical")
+    battleship.shoot(1,1)
+    expect( battleship.ship_status_in(1,1) ).to eq "afloat"
   end  
 
 end
