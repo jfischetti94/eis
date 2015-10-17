@@ -4,7 +4,7 @@ require_relative '../model/coord'
 
 describe 'Ship' do
 
-	before(:each) do
+  before(:each) do
     @coord = double("coord")
     @coord = instance_double("Coord", :x => 1, :y => 1)
     @vertical = "vertical"

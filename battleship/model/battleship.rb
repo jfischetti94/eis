@@ -18,9 +18,9 @@ class Battleship
   end
 
   def put_ship(ship_name, x, y,orientation_name)
-    coord_origin = Coord.new(x,y)
+    origin_coord = Coord.new(x,y)
     ship_orientation = Vertical.new()
-    ship = Ship.send(ship_name,ship_origin,ship_orientation)
+    ship = Ship.send(ship_name,origin_coord,ship_orientation)
     @board.put_ship(ship)
   end
 

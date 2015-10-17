@@ -6,4 +6,8 @@ class Board
     @high = high
   end
 
+  def status_in(coord)
+    return "empty"
+  end
+
 end
