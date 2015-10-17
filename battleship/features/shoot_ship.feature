@@ -2,8 +2,7 @@ Feature: As a user I want to shoot the enemy ships
   
   Background:
     Given a battleship 10x10
-    
-  @wip
+
   Scenario: Shot hit water
     When I shoot coordinate [1,1]
     Then The coordinate [1,1] has water

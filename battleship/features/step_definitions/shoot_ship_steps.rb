@@ -9,6 +9,6 @@ When(/^I shoot coordinate \[(\d+),(\d+)\]$/) do |x, y|
 end
 
 Then(/^The coordinate \[(\d+),(\d+)\] has water$/) do |x, y|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@battleship.status_in(x.to_i,y.to_i)).to eq "empty"
 end
 
