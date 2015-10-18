@@ -39,7 +39,9 @@ class Battleship
   end
 
   def ship_status_in(x,y)
-    return "afloat"
+    coord = Coord.new(x,y)
+    ship = @board.ship_at(coord)
+    return ship.status
   end
 
 end

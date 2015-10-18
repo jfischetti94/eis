@@ -17,6 +17,6 @@ When(/^I shoot coordinate \[(\d+),(\d+)\]$/) do |x, y|
   @battleship.shoot(x.to_i,y.to_i)
 end
 
-Then(/^I hit ship in \[(\d+),(\d+)\] but dont sunken$/) do |arg1, arg2|
-  expect( @battleship.ship_status_in(1,1) ).to eq "afloat"
+Then(/^I hit ship in \[(\d+),(\d+)\] but dont sunken$/) do |x, y|
+  expect( @battleship.ship_status_in(x.to_i,y.to_i) ).to eq "afloat"
 end
