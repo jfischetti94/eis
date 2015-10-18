@@ -5,7 +5,7 @@ Then(/^The coordinate \[(\d+),(\d+)\] has water$/) do |x, y|
 end
 
 Then(/^I hit ship in \[(\d+),(\d+)\] and sunken$/) do |x, y|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect( @battleship.ship_status_in(x.to_i,y.to_i) ).to eq "sunken"
 end
 
 

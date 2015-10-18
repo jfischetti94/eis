@@ -11,7 +11,7 @@ Feature: As a user I want to shoot the enemy ships
     Given the cell [3,3] is occupied for horizontal cruiser
     When I shoot coordinate [3,3]
     Then I hit ship in [3,3] but dont sunken
-  @wip
+  
   Scenario: Shoot a ship and sunken
   	Given the cell [3,3] is occupied for horizontal submarine
     When I shoot coordinate [3,3]
