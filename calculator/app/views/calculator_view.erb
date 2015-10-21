@@ -2,24 +2,47 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
   <body>
-  <form method="POST" action="calculate" id="calculator">
-    <label>Primer Operando:</label>
-    <input id="first_argument" type="text" name="first_argument">
-    <label>Primer Operando:</label>
-    <input id="second_argument" type="text" name="second_argument">  
-    <select id="operations" name="operations">
-      <option value="sum">Suma</option>
-      <option value="subtraction">Resta</option>
-      <option value="average">Promedio</option>
-    </select>  
-    <input type="submit" value="Calcular"/>
-  </form>
-  <div id="result">Resultado: <%= @result %></div>
-  <div id="counter">Operaciones Realizadas: <%= @counter %></div>
-  <form method="POST" action="reset_counter" id="reset">
-      <input type="submit" value="Resetear Contador"/>
-  </form>
+  <div class="col-md-8 col-md-offset-2">
+    <form method="POST" action="calculate" id="calculator">
+      <fieldset>
+        <legend>Calculadora</legend>
+        <div class="form-group input-sm">
+          <label>Primer Operando:</label>
+          <input id="first_argument" type="text" name="first_argument">
+        </div>
+        <div class="form-group input-sm">
+          <label>Primer Operando:</label>
+          <input id="second_argument" type="text" name="second_argument">  
+        </div>
+        <div class="form-group input-sm">
+          <label>Tipo de Operacion:</label>      
+          <select class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="operations" name="operations">
+            <option value="sum">Suma</option>
+            <option value="subtraction">Resta</option>
+            <option value="average">Promedio</option>
+          </select>  
+        </div>
+        <input class="btn btn-primary btn-sm" type="submit" value="Calcular"/>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <form method="POST" action="reset_counter" id="reset">
+      <fieldset>
+        <legend>Resultados</legend>
+        <div id="result">Resultado: <%= @result %></div>
+        <div id="counter">Operaciones Realizadas: <%= @counter %></div>
+        <input class="btn btn-primary btn-sm" type="submit" value="Resetear Contador"/>
+      </fieldset>
+    </form>
+  </div>
   </body>
 </html>
