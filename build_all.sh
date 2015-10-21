@@ -1,10 +1,5 @@
 #!/usr/bin/env sh
 set -e
-cd ejemplo_banco
-bundle install
-bundle exec rake
-
-cd ..
 cd chopper
 bundle install
 bundle exec rake
@@ -15,11 +10,11 @@ bundle install
 bundle exec rake
 
 cd ..
-cd base_cucumber
+cd battleship
 bundle install
 bundle exec rake
 
 cd ..
-cd battleship
+cd calculator
 bundle install
 bundle exec rake
