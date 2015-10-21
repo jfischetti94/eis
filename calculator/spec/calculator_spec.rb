@@ -20,4 +20,10 @@ describe 'Calculadora' do
     expect(calculator.average(6,2)).to eq 4
   end
 
+  it 'when I do 2 operations the counter is 2' do
+    calculator.sum(1,2))
+    calculator.subtraction(4,2))
+    expect(calculator.counter).to eq 2
+  end
+
 end
