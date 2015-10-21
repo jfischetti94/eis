@@ -4,6 +4,10 @@ require_relative '../app/models/calculator'
 describe 'Calculadora' do
   let(:calculator) { Calculator.new }
 
+  it 'when I do not perform any account the counter is 0' do
+    expect(calculator.counter).to eq 0
+  end
+
   it '1 + 2 equals 3' do
   	expect(calculator.sum(1,2)).to eq 3
   end
