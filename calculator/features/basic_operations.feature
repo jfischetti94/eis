@@ -9,7 +9,6 @@ Feature: Operaciones basicas
     When make the sum
     Then the result is 3
 
-  @wip
   Scenario: subtraction
     Given first operand is 3
     And second operand is 2

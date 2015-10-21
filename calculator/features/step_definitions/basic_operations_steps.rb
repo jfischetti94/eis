@@ -18,3 +18,8 @@ end
 Then(/^the result is (\d+)$/) do |n|
   expect(page).to have_content(n)
 end
+
+When(/^make the subtraction$/) do
+  select('Resta', from: 'operations')
+  click_button('Calcular')
+end
