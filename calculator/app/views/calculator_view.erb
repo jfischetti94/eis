@@ -17,5 +17,9 @@
     <input type="submit" value="Calcular"/>
   </form>
   <div id="result">Resultado: <%= @result %></div>
+  <div id="counter">Operaciones Realizadas: <%= @counter %></div>
+  <form method="POST" action="reset_counter" id="reset">
+      <input type="submit" value="Resetear Contador"/>
+  </form>
   </body>
 </html>

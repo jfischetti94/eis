@@ -25,13 +25,13 @@ describe 'Calculadora' do
     calculator.subtraction(4,2)
     expect(calculator.counter).to eq 2
   end
-=begin
+
   it 'when reset the counter the counter is 0' do
     calculator.sum(1,2)
     calculator.subtraction(4,2)
     expect(calculator.counter).to eq 2
+    calculator.reset_counter
     expect(calculator.counter).to eq 0
   end
-=end
 
 end

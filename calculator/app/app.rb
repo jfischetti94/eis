@@ -9,24 +9,22 @@ module Ejemplo
     CALCULATOR = Calculator.new
 
     get 'calculator' do
+      @result = 0
+      @counter = CALCULATOR.counter
       render 'calculator_view'
     end
 
     post 'calculate' do
       @result = CALCULATOR.send(params[:operations], params[:first_argument].to_i, params[:second_argument].to_i)
+      @counter = CALCULATOR.counter
       render 'calculator_view'
     end
-    
-=begin   
-    get 'saludo' do
-      render 'saludo'
+
+    post 'reset_counter' do
+      CALCULATOR.reset_counter
+      @counter = CALCULATOR.counter
+      render 'calculator_view'
     end
 
-    post 'saludo' do
-      session[:nombre] = params[:nombre]
-      @nombre = session[:nombre]
-      render 'saludo'
-    end
-=end
   end
 end
