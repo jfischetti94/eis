@@ -15,6 +15,6 @@ When(/^make the sum$/) do
   click_button('Calcular')
 end
 
-Then(/^the result is (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^the result is (\d+)$/) do |n|
+  expect(page).to have_content(n)
 end

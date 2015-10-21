@@ -12,8 +12,8 @@ module Ejemplo
       render 'calculator_view'
     end
 
-    post 'calcular' do
-      @result = CALCULATOR.send(params[:operations],params[:first_argument],params[:second_argument])
+    post 'calculate' do
+      @result = CALCULATOR.send(params[:operations], params[:first_argument].to_i, params[:second_argument].to_i)
       render 'calculator_view'
     end
     
