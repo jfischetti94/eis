@@ -8,4 +8,8 @@ describe 'Calculadora' do
   	expect(calculator.sum(1,2)).to eq 3
   end
 
+  it '4 - 2 equals 2' do
+    expect(calculator.subtraction(4,2)).to eq 2
+  end
+
 end
