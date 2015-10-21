@@ -15,9 +15,8 @@ Feature: Operaciones basicas
     When make the subtraction
     Then the result is 1
 
-    @wip
     Scenario: average
       Given first operand is 2
       And second operand is 8
       When make the average
-      Then the result is 6
+      Then the result is 5
