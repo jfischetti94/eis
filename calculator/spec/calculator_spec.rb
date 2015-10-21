@@ -21,9 +21,17 @@ describe 'Calculadora' do
   end
 
   it 'when I do 2 operations the counter is 2' do
-    calculator.sum(1,2))
-    calculator.subtraction(4,2))
+    calculator.sum(1,2)
+    calculator.subtraction(4,2)
     expect(calculator.counter).to eq 2
   end
+=begin
+  it 'when reset the counter the counter is 0' do
+    calculator.sum(1,2)
+    calculator.subtraction(4,2)
+    expect(calculator.counter).to eq 2
+    expect(calculator.counter).to eq 0
+  end
+=end
 
 end
