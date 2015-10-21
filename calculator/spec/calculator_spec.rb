@@ -12,4 +12,8 @@ describe 'Calculadora' do
     expect(calculator.subtraction(4,2)).to eq 2
   end
 
+  it '6 prom 2 equals 4' do
+    expect(calculator.average(6,2)).to eq 4
+  end
+
 end
