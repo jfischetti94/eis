@@ -12,6 +12,7 @@
   <body>
   <div class="col-md-8 col-md-offset-2">
     <form method="POST" action="calculate" id="calculator">
+      <%= csrf_token_field %>
       <fieldset>
         <legend>Calculadora</legend>
         <div class="form-group input-sm">
@@ -36,6 +37,7 @@
   </div>
   <div class="col-md-8 col-md-offset-2">
     <form method="POST" action="reset_counter" id="reset">
+      <%= csrf_token_field %>
       <fieldset>
         <legend>Resultados</legend>
         <div id="result">Resultado: <%= @result %></div>
